@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>지방선거 후보 정당 이력 트리</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="brand-mark">票</span>
+          <div>
+            <h1>지방선거 후보 트리</h1>
+            <p id="metaLine">후보 데이터를 불러오는 중</p>
+          </div>
+        </div>
+        <label class="search">
+          <span>검색</span>
+          <input id="searchInput" type="search" placeholder="후보, 지역, 정당">
+        </label>
+        <div class="filters" id="regionFilters"></div>
+        <div class="candidate-list" id="candidateList"></div>
+      </aside>
+
+      <main class="workspace">
+        <section class="hero">
+          <div>
+            <span class="eyebrow" id="raceLabel">제9회 전국동시지방선거</span>
+            <h2 id="candidateName">후보자를 선택하세요</h2>
+            <p id="candidateSummary">왼쪽 목록에서 후보자를 클릭하면 연도별 정당 이력과 관련 뉴스가 표시됩니다.</p>
+          </div>
+          <div class="status-card">
+            <span>현재 정당</span>
+            <strong id="currentParty">-</strong>
+          </div>
+        </section>
+
+        <section class="content-grid">
+          <div class="panel tree-panel">
+            <div class="panel-head">
+              <div>
+                <h3>정당 이력</h3>
+                <span id="treeRange">연도별 보기</span>
+              </div>
+            </div>
+            <div class="coverage-note" id="historyCoverage"></div>
+            <div class="tree" id="partyTree"></div>
+          </div>
+
+          <div class="panel pledge-panel">
+            <div class="panel-head">
+              <div>
+                <h3>이번 선거 공약</h3>
+                <span id="pledgeHint">후보자별 공약·정책 출처</span>
+              </div>
+              <button id="refreshPledges" class="icon-button" type="button" title="공약 자료 새로고침">↻</button>
+            </div>
+            <div id="pledgeList" class="pledge-list empty">후보자를 선택하면 공약 자료를 불러옵니다.</div>
+          </div>
+
+          <div class="panel news-panel">
+            <div class="panel-head">
+              <div>
+                <h3>관련 뉴스</h3>
+                <span id="newsHint">최근 6개월, 유사 기사 묶음</span>
+              </div>
+              <button id="refreshNews" class="icon-button" type="button" title="뉴스 새로고침">↻</button>
+            </div>
+            <div id="newsList" class="news-list empty">후보자를 선택하면 뉴스를 불러옵니다.</div>
+            <button id="loadOlder" class="load-more" type="button" hidden>더보기</button>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
