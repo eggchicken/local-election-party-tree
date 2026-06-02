@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "functions": {
+    "api/news.js": {
+      "maxDuration": 10
+    },
+    "api/pledges.js": {
+      "maxDuration": 10
+    }
+  }
+}
